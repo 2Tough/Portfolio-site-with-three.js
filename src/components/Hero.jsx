@@ -91,7 +91,6 @@ const Hero = () => {
                 <Right>
                     {/* 3D model */}
                     <Img src="./img/blackhole.png"></Img>
-
                 </Right>
             </Container>
         </Section>
