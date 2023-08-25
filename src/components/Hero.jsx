@@ -20,12 +20,36 @@ const Container = styled.div`
 `
 
 const Left = styled.div`
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px`
+const Title = styled.h1`
+    font-size: 74px;`
 
+const WhatIDo = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 10px;`
+
+const Description = styled.p`
+    font-size: 24px;
+    color: lightgray;
 `
+
+const Subtitle = styled.h2`
+    color: #da4ea2;
+`;
+
+const Button = styled.button`
+    background: #da4ea2
+    color: white
+    font-weight: `
 
 const Right = styled.div`
-
-`
+    flex: 3`
+const Img = styled.img``
 
 const Hero = () => {
     return (
@@ -34,12 +58,17 @@ const Hero = () => {
             <Container>
                 <Left>
                     <Title>Create. Learn. Have fun.</Title>
-                    <WhatWeDo>
+                    <WhatIDo>
                         <Subtitle>What I do</Subtitle>
-                    </WhatWeDo>
+                    </WhatIDo>
                     <Description></Description>
+                    <Button>Learn more</Button>
                 </Left>
-                <Right></Right>
+                <Right>
+                    {/* 3D model */}
+                    <Img src="./img/blackhole.png"></Img>
+
+                </Right>
             </Container>
         </Section>
     )
