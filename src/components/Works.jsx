@@ -43,6 +43,35 @@ const ListItems = styled.li`
     cursor: pointer;
     color: transparent;
     -webkit-text-stroke: 1px white;
+    position: relative;
+
+    // ::after not working for now
+
+    // ::after{
+    //     content: "${(props)=> props.text}";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 0px;
+    //     overflow: hidden;
+    //     color: black;
+    //     white-space: nowrap;
+
+        
+    // }
+
+    // &:hover {
+    //     ::after{
+    //         color: black;
+    //         animation: moveTxt 0.5s linear both;
+
+    //         @keyframes moveTxt {
+    //             to{
+    //                 width: 100%;
+    //             }
+    //         }
+    //     }
+    }
 `
 
 const Right = styled.div`
@@ -56,7 +85,7 @@ const Works = () => {
                 <Left>
                     <List>
                         {data.map((item) =>(
-                        <ListItems key={item}>
+                        <ListItems key={item} text={item}>
                              {item}
                         </ListItems>
                         ))}
