@@ -43,13 +43,37 @@ const Subtitle = styled.h2`
 `;
 
 const Button = styled.button`
-    background: #da4ea2
-    color: white
-    font-weight: `
+    background: #da4ea2;
+    color: white;
+    font-weight: 500;
+    width: 100px;
+    padding: 1.5em 0.8em;
+    border-radius: 15px;
+    border: none;
+    `
 
 const Right = styled.div`
-    flex: 3`
-const Img = styled.img``
+    flex: 3;
+    position: relative;`
+const Img = styled.img`
+    width: 800px;
+    height: 600px;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    animation: animate 50s infinite linear;
+
+    @keyframes animate {
+        to{
+            transform: translateY(20px);
+            transform:rotate(360deg); 
+        }
+    }
+    `
 
 const Hero = () => {
     return (
@@ -61,7 +85,7 @@ const Hero = () => {
                     <WhatIDo>
                         <Subtitle>What I do</Subtitle>
                     </WhatIDo>
-                    <Description></Description>
+                    <Description>I like animation, sculting and programming.</Description>
                     <Button>Learn more</Button>
                 </Left>
                 <Right>
