@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components"
 import Navbar from "./Navbar";
+import { Canvas } from "@react-three/fiber"
+import { MeshDistortMaterial, OrbitControls, Sphere} from "@react-three/drei"
 
 const Section = styled.div`
 height: 100vh;
@@ -56,22 +58,39 @@ const Right = styled.div`
     flex: 3;
     position: relative;`
 const Img = styled.img`
+
     width: 800px;
     height: 600px;
     object-fit: contain;
     position: absolute;
+ 
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
     animation: animate 50s infinite linear;
+   
 
     @keyframes animate {
         to{
             transform: translateY(20px);
             transform:rotate(360deg); 
+            scale: 1;
         }
+
+        // might edit this, trying this outjdjjdjdjdjd
+        25% {
+            scale: 1.1;
+          }
+        
+          50% {
+            scale: 1.2;
+          }
+        
+          60% {
+            scale: 1.3;
+          }
     }
     `
 
@@ -89,7 +108,19 @@ const Hero = () => {
                     <Button>Learn more</Button>
                 </Left>
                 <Right>
-                    {/* 3D model */}
+                    {/* <Canvas>
+                        <OrbitControls enableZoom={false} />
+                        <ambientLight intensity={2}/>
+                        <directionalLight position={[400,100,130]}/>
+                        <Sphere args={[1, 200, 200]} scale={2.1}>
+                        <MeshDistortMaterial
+                            color="#011e40" 
+                            attach="material" 
+                            distort={0.4} 
+                            speed={0.5}
+                        />
+                        </Sphere>
+                    </Canvas> */}
                     <Img src="./img/blackhole.png"></Img>
                 </Right>
             </Container>
